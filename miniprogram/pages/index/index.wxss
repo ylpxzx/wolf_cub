@@ -1,0 +1,9 @@
+.mysearch {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+.style_test{
+  opacity: 0.6
+}

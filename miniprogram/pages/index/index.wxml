@@ -1,0 +1,43 @@
+<view class="bg-gradual-blue bg-mask padding-tb-xl">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      狼君莫笑
+    </view>
+    <view class="padding-xs">
+      最怕你一生碌碌无为，还安慰自己平凡可贵.
+    </view>
+  </view>
+</view>
+
+<view wx:for="{{bloginfo}}" wx:key="key" wx:for-index="index" wx:for-item="item" style="margin-bottom:25rpx">
+  <view class="solid-bottom"></view>
+  <view class="cu-card case no-card">
+    <view class="cu-item shadow">
+      <view class="image" bindtap="viewItem" data-item="{{item}}" data-user="{{userinfo[index]}}">
+        <image src="{{item.picture}}" mode="widthFix"></image>
+        <!-- <view class="cu-tag bg-black style_test" bindtap="look_image">预览图片</view> -->
+        <view class="cu-bar bg-shadeBottom">
+          <text class="text-cut">{{item.title}}</text>
+        </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{userinfo[index].avatarUrl}});"></view>
+          <view class="content flex-sub">
+            <view class="text-grey">{{userinfo[index].nickName}}
+            <text class="cuIcon-pic lg text-gray" style="margin-left: 416rpx;" bindtap="look_image" data-item="{{item.picture}}">预览</text>
+
+            </view>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.datetime}}
+              <view class="text-gray text-sm">
+                <text class="cuIcon-likefill margin-lr-xs"></text> {{item.collectNum}}
+                <text class="cuIcon-messagefill margin-lr-xs"></text> {{item.commentNum}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
